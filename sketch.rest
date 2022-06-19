@@ -1,0 +1,43 @@
+@id = c5a6e3c8-e26e-4a33-a8fc-b467b15e45dd
+###
+GET http://localhost:8080/sessions
+
+
+###
+
+GET http://localhost:8080/sessions/{{id}}
+
+
+###
+
+POST http://localhost:8080/sessions
+Content-Type: application/json
+
+{
+    "keyword" : "cat",
+    "period" : 45,
+    "photoCount": 7
+}
+
+
+###
+
+POST http://localhost:8080/sessions/{{id}}/photos
+Content-Type: application/json
+
+{
+    "skip" : false
+}
+
+###
+
+POST http://localhost:8080/sessions/{{id}}/photos
+Content-Type: application/json
+
+{
+    "skip" : true
+}
+
+
+###
+DELETE http://localhost:8080/sessions/{{id}}
